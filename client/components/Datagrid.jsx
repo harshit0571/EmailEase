@@ -13,6 +13,7 @@ const columns = [
     valueGetter: (params) =>
       `${params.row.firstName || ""} ${params.row.lastName || ""}`,
   },
+  { field: "email", headerName: "Email", width: 160 },
 ];
 
 export default function DataTable({ rows }) {

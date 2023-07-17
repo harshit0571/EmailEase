@@ -12,14 +12,18 @@
     "@aws-sdk/client-ses": "^3.370.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.14.0",
     "@mui/styled-engine-sc": "^5.12.0",
     "@mui/x-data-grid": "^6.10.0",
     "autoprefixer": "10.4.14",
+    "convert-csv-to-json": "^2.0.0",
     "next": "13.4.10",
+    "papaparse": "^5.4.1",
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-papaparse": "^4.1.0",
     "styled-components": "^5.3.11",
     "tailwindcss": "3.3.3"
   }
