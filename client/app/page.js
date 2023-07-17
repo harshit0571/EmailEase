@@ -5,28 +5,39 @@ import { data } from "autoprefixer";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Image from "next/image";
 import Papa from "papaparse";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [CSVfile, setCSVfile] = useState("");
   const [rows, setrows] = useState([]);
+  const [emailArrays, setemailArrays] = useState([]);
   console.log(CSVfile);
+
+  useEffect(() => {
+    const AddEmails = () => {
+      console.log(rows);
+      rows.forEach((data) => {
+        console.log(data.email);
+        setemailArrays((email) => [...email, data.email]);
+      });
+    };
+    AddEmails();
+  }, [rows]);
 
   const Send = async () => {
     const response = await fetch("/api/Send", {
       method: "POST",
+      body: JSON.stringify({ array: emailArrays }),
     });
     const data = await response.json();
     console.log(data);
   };
   const changeHandler = (event) => {
-    console.log(event.target.files);
     Papa.parse(event.target.files[0], {
       header: true,
       skipEmptyLines: true,
       complete: function (result) {
         setrows(result.data);
-        console.log(result);
       },
     });
   };
@@ -62,6 +73,13 @@ export default function Home() {
         onClick={Send}
       >
         Send
+      </button>
+      <button
+        onClick={() => {
+          console.log(emailArrays);
+        }}
+      >
+        test
       </button>
     </main>
   );

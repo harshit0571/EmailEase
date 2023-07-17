@@ -1,8 +1,12 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { NextResponse } from "next/server";
 
-export const POST = async () => {
+export const POST = async (req) => {
   try {
+    const dataRec = await req.json();
+    const recipients = dataRec.array;
+    console.log(recipients);
+    const t = ["harshitchadha65@gmail.com"];
     const SES_CONFIG = {
       credentials: {
         accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -12,27 +16,27 @@ export const POST = async () => {
     };
     const sesClient = new SESClient(SES_CONFIG);
 
-    const sendMail = async (recipient, name) => {
+    const sendMail = async () => {
       let params = {
         Source: "harshitchadha65@gmail.com",
         Destination: {
-          ToAddresses: ["harshitchadha65@gmail.com"],
+          ToAddresses: recipients,
         },
         ReplyToAddresses: [],
         Message: {
           Body: {
             Html: {
               Charset: "UTF-8",
-              Data: "<h1>This is body</h1>",
+              Data: "<h1>This is a test mail sent by harshit using aws email service</h1>",
             },
             Text: {
               Charset: "UTF-8",
-              Data: "This is body",
+              Data: "This is a test mail sent by harshit using aws email service",
             },
           },
           Subject: {
             Charset: "UTF-8",
-            Data: "This is subject",
+            Data: "This is a test mail (please ignore)",
           },
         },
       };
