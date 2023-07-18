@@ -9,8 +9,8 @@ export const POST = async (req) => {
     const t = ["harshitchadha65@gmail.com"];
     const SES_CONFIG = {
       credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY,
-        secretAccessKey: process.env.AWS_SECRET_KEY,
+        accessKeyId: process.env.NEXT_AWS_ACCESS_KEY,
+        secretAccessKey: process.env.NEXT_AWS_SECRET_KEY,
       },
       region: process.env.AWS_SES_REGION,
     };
