@@ -18,14 +18,7 @@ const columns = [
 
 export default function DataTable({ rows }) {
   return (
-    <div
-      style={{
-        height: 400,
-        width: "50%",
-        overflow: "scroll",
-        background: "white",
-      }}
-    >
+    <div className="w-[100%] md:w-[50%] h-[400px] overflow-scroll relative">
       <DataGrid
         rows={rows}
         columns={columns}

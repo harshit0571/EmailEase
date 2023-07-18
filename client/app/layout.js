@@ -13,9 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-blue-900 min-h-screen flex">
-          <Navigation />
-          <div className="bg-white flex-grow mt-2 mx-2 mb-2 rounded-lg p-5">
+        <div className="bg-blue-900 min-h-screen">
+          <div className="top-0 mt-0 sticky z-50 block">
+            <Navigation />
+          </div>
+          <div className="bg-white relative z-10 flex flex-grow mt-2 mx-2 mb-2 rounded-lg p-5">
             {children}
           </div>
         </div>

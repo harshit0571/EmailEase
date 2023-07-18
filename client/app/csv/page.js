@@ -44,7 +44,7 @@ const page = () => {
   };
 
   return (
-    <main className="flex w-full flex-col items-center justify-center relative  p-4  ">
+    <main className="flex w-full h-screen flex-col items-center justify-center relative gap-2  p-4  ">
       <Button
         variant="contained"
         className="bg-blue-500 m-5 mb-5 cursor-pointer"
@@ -61,6 +61,7 @@ const page = () => {
         />
       </Button>
       <DataTable rows={rows} />
+
       <button
         className="px-4 mt-10 py-2 bg-red-600 text-white border-white rounded-lg "
         onClick={Send}
