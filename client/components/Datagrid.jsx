@@ -22,7 +22,6 @@ export default function DataTable({ rows }) {
       style={{
         height: 400,
         width: "50%",
-        minWidth: "300px",
         overflow: "scroll",
         background: "white",
       }}

@@ -44,10 +44,10 @@ const page = () => {
   };
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-center  p-4  ">
+    <main className="flex w-full flex-col items-center justify-center relative  p-4  ">
       <Button
         variant="contained"
-        className="bg-blue-500 m-5 cursor-pointer"
+        className="bg-blue-500 m-5 mb-5 cursor-pointer"
         startIcon={<CloudUploadIcon />}
       >
         <label htmlFor="file_input" className="cursor-pointer">
